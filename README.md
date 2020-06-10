@@ -11,6 +11,12 @@ Project is separated into:
 2. Install mongodb and start it
 3. Install yarn
 
+Go to todo-app-backend folder and run
+```sh
+$ yarn install
+$ node server/server.js
+
+```
 
 Go to todo-app-frontend folder and run:
 ```sh
@@ -25,12 +31,7 @@ B. Run webpack dev-server :
   $ yarn run dev-server
 ```
 
-Go to todo-app-backend folder and run
-```sh
-$ yarn install
-$node server/server.js
 
-```
 
 
 
