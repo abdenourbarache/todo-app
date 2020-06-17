@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import LoginForm from "./LoginForm";
 import {startLogin} from "./../actions/auth";
 import {startGetTodos} from "./../actions/todos";
-import {fetchingData, dataFetched} from "./../actions/loading";
 
 class LoginPage extends React.Component{
 
@@ -13,25 +12,20 @@ class LoginPage extends React.Component{
             email,
             password
         }
-         ,(token) => {
-                this.props.fetchingData();
-                this.props.getTodos(token,() => {
-                    this.props.history.push("/dashboard");
-                    this.props.dataFetched();
-             });
-            }
-        )        
+         ,(token) => this.props.getTodos(token));        
     }
     render(){
         return (
-            <div>
-                <h3>Please insert your email and password to login</h3>
-                <LoginForm onSubmit={this.onSubmit}/>
-                {
-                    this.props.error && 
-                    this.props.error.type === 'authenticationError' &&
-                    <p>{this.props.error.message}</p>
-                }
+            <div className="box-layout">
+                  <div className="box-layout__box">
+                    <h3 className="box-layout__title">Please insert your email and password to login</h3>
+                    <LoginForm onSubmit={this.onSubmit}/>
+                    {
+                        this.props.error && 
+                        this.props.error.type === 'authenticationError' &&
+                        <p className="error-message">{this.props.error.message}</p>
+                     }
+                  </div>
             </div>
             
         )
@@ -40,9 +34,7 @@ class LoginPage extends React.Component{
 
 const mapDispatchToProps = (dispatch) => ({
     startLogin : (user,callback) => dispatch(startLogin(user,callback)),
-    getTodos : (token,callback) => dispatch(startGetTodos(token,callback)),
-    fetchingData : () => dispatch(fetchingData()),
-    dataFetched : () => dispatch(dataFetched())
+    getTodos : (token) => dispatch(startGetTodos(token)),
 });
 
 const mapStateToProps = (state) => ({

@@ -1,0 +1,15 @@
+.header{
+    background-color: $dark-pale-blue;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    //padding: $s-size;
+}
+
+.header__title{
+    color: white;
+    text-decoration: none;
+}

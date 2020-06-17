@@ -19,14 +19,17 @@ class RegisterPage extends React.Component{
     }
     render(){
         return (
-            <div>
-                <h3>Please insert your email and password  register</h3>
-                <RegisterForm onSubmit={this.onSubmit}/>
-                {
-                    this.props.error && 
-                    this.props.error.type === 'registrationError' &&
-                    <p>{this.props.error.message}</p>
-                }
+            <div className="box-layout">
+                 <div className="box-layout__box">
+                    <h3 className="box-layout__title">Please insert your email and password to register</h3>
+                    <RegisterForm onSubmit={this.onSubmit}/>
+                    {
+                        this.props.error && 
+                        this.props.error.type === 'registrationError' &&
+                        <p className="error-message">{this.props.error.message}</p>
+                    }
+                 </div>
+                
             </div>
         )
     }   

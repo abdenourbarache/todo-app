@@ -37,21 +37,24 @@ export default class LoginForm extends React.Component{
     render(){
         return(
             <form onSubmit = {this.onSubmit} autoComplete="off">
-                {!!this.state.error && <p>{this.state.error}</p>}
+                
                 <input
                     type="email"
                     placeholder="Email"
                     name="email" 
                     id ="email" 
+                    className="text-input"
                     onChange={this.onEmailChange} 
-                    autoFocus/><br/><br/>
+                    autoFocus/>
                 <input 
                     type="password"
                     name="password" 
                     id="password" 
                     placeholder="Password" 
+                    className="text-input"
                     onChange={this.onPasswordChange}/>
-                <input type="submit" value="Login"/>
+                <button className="blue-button">Login</button>
+                {!!this.state.error && <p className="error-message">{this.state.error}</p>}
             </form>
         )
     }

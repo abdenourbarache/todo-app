@@ -21,7 +21,7 @@ export class Logout extends React.Component{
         {
             if (this.state.redirect) return <Redirect to={this.state.redirect} />
             return (
-                <button onClick={this.onLogoutClick}>Logout</button>
+                <button className="logout-button" onClick={this.onLogoutClick}>Logout</button>
             )   
         }
     }

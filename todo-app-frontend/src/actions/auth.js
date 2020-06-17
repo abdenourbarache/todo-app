@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { fetchingData, dataFetched } from './loading';
 
 const API_URL = "http://localhost:3000/users/";
 
@@ -10,20 +11,22 @@ export const login = (user = {}) => ({
 export const startLogin = (user = {}, callback) => {
 
     const {
-        email,
-        password
+        email
     } = user;
 
     return (dispatch) => {
+        dispatch(fetchingData());
         axios.post(API_URL + 'login', user)
             .then(res => {
+                dispatch(dataFetched());
                 callback(res.headers["x-auth"]);
-                dispatch(
-                    login({
-                        _id: res.data._id,
-                        email,
-                        token: res.headers["x-auth"]
-                }));    
+                const userObj = {
+                    _id: res.data._id,
+                    email,
+                    token: res.headers["x-auth"]
+                } 
+                dispatch(login(userObj));
+                localStorage.setItem("user",JSON.stringify(userObj));   
             })
             .catch(err => 
                 dispatch(loginFailure({
@@ -42,14 +45,17 @@ export const startRegister = (user = {}, callback) => {
     } = user;
 
     return (dispatch) => {
+        dispatch(fetchingData());
         axios.post(API_URL, user)
             .then(res => {
-                dispatch(
-                    login({
-                        _id: res.data._id,
-                        email,
-                        token: res.headers["x-auth"]
-                    }));
+                dispatch(dataFetched());
+                const userObj = {
+                    _id: res.data._id,
+                    email,
+                    token: res.headers["x-auth"]
+                }
+                dispatch(login(userObj));
+                localStorage.setItem("user",JSON.stringify(userObj));
                 callback();
             })
             .catch(err => 
@@ -74,7 +80,10 @@ export const  startLogout = (token) =>{
                 headers: {
                     'x-auth': token
                 }
-            }).then(res => dispatch(logout()))
+            }).then(res => {
+                dispatch(logout());
+                localStorage.removeItem("user");
+            })
     }
 }
 

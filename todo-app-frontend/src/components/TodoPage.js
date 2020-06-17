@@ -16,7 +16,15 @@ class TodoPage extends React.Component{
     render(){
         return(
             <div>
+                <div className="page-header">
+                    <div className="content-container">
+                        <div className="page-header__box">
+                            <h1 className="page-header__title">Update todo</h1>
+                        </div>
+                    </div>
+                </div>
                 <TodoForm todo = {this.props.todo} onSubmit = {this.onSubmit} edit={true}/>
+                
             </div>
         )
     }

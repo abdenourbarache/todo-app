@@ -21,9 +21,15 @@ class AddTodoPage extends React.Component{
     render() {
         return (
             <div>
-                <h2>Add todo</h2>
-                {this.state.error && <p>{this.state.error}</p>}
+                <div className="page-header">
+                    <div className="content-container">
+                        <div className="page-header__box">
+                            <h1 className="page-header__title">Add todo</h1>
+                        </div>
+                    </div>
+                </div>
                 <TodoForm onSubmit={this.onSubmit}/>
+                {this.state.error && <p>{this.state.error}</p>}
             </div>
         )
     }

@@ -1,0 +1,29 @@
+.blue-button{
+    padding: $s-size;
+    background-color: $dark-pale-blue;
+    min-width: 10rem;
+    font-size: $large-font;
+    color: white;
+}
+
+.white-button-link{
+    color: white;
+}
+
+.green-button{
+    padding: $s-size $m-size;
+    background-color: $pale-green;
+    font-size: $large-font;
+    color: white;
+}
+
+
+
+.logout-button{
+    padding: $s-size $m-size;
+    background-color: $dark-pale-blue;
+    margin: $s-size;
+    width: 10rem;
+    font-size: $large-font;
+    color: white;
+}

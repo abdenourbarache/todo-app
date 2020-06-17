@@ -9,20 +9,20 @@ import {startRemoveTodo} from "../actions/todos";
 
 export const TodoItem = ({_id, text,completed, completedAt, startRemoveTodo,token}) =>{
     const onClickRemove = () => {
-        console.log(token, _id)
         startRemoveTodo(token,_id);
     }
     return(
-        <div>
-            <Link to={`/todos/${_id}`}>
-                <h3>{text}</h3>
-            </Link>
-
-            {completed ?<p>completed at : {moment(completedAt).format('MMMM Do, YYYY')}</p> : <p>not completed!</p> }
-
-            <button onClick={onClickRemove}>Remove</button>
-            <br/><br/>
-        </div>
+            <div className="list-item">
+                <Link className="list-item__link" to={`/todos/${_id}`}>
+                    <div>
+                        <h3 className="list-item__title">{text}</h3>
+                        {completed ?<small>completed at : {moment(completedAt).format('MMMM Do, YYYY')}</small> :
+                            <small>Not completed!</small> } 
+                    </div>
+                </Link>
+                <img src="/img/remove.png" alt="remove" className="remove-img" onClick={onClickRemove}/>
+            </div>
+           
 )}
 
 const mapDispatchToProps = (dispatch) => ({

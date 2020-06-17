@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { fetchingData, dataFetched } from './loading';
 
 const API_URL = "http://localhost:3000/todos/";
 
@@ -7,8 +8,9 @@ export const getTodos = (todos) =>({
     todos
 })
 
-export const startGetTodos = (token, callback) =>{
-    return (dispatch) => {
+export const startGetTodos = (token) =>{
+        return (dispatch) => {
+        dispatch(fetchingData());
         axios.get(API_URL,
             {
                 headers: {
@@ -16,7 +18,7 @@ export const startGetTodos = (token, callback) =>{
                 }
             }).then(res =>{
                     dispatch(getTodos(res.data.todos));
-                    callback();
+                    dispatch(dataFetched());
                 } 
             )
     }

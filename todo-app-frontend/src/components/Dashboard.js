@@ -3,31 +3,31 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import TodoList from './TodoList';
-import Logout from './Logout';
 
-import Loading from './Loading';
 
 export const Dashboard = (props) => {
     return(
-
-        <div> 
-            {props.loading ? (
-                <Loading/>
-            ) : (
-                <div>
-                    <h2>This is dashboard</h2>  
-                    <button><Link to="/create">Add New todo</Link></button>
-                    <TodoList />
-                    <Logout />
+        <div>
+            <div className="page-header">
+                <div className="content-container">
+                    <div className="page-header__box">
+                        <div>
+                            <h1 className="page-header__title">Dashboard</h1>
+                            <p>You have total of {props.totalTodos} {props.totalTodos > 1 ? "todos" : "todo"}</p>
+                        </div>
+                        <button className="green-button">
+                            <Link className="white-button-link" to="/create">Add New todo</Link>
+                        </button>
+                    </div>
                 </div>
-            )} 
+            </div>
+            <TodoList />
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    loading : state.loading,
-    
+    totalTodos : state.todos.length
 })
 
 export default connect(mapStateToProps)(Dashboard);

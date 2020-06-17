@@ -1,0 +1,27 @@
+//font sizes
+$large-font : 1.8rem;
+
+// sizes
+
+$xl-size : 4.8rem;
+$l-size : 3.2rem;
+$m-size : 1.6rem;
+$s-size : 1.2rem;
+
+
+// colors
+
+$dark-grey : #353535;
+$dark-pale-blue : #284B63;
+$pale-green : #3C6E71;
+$light-grey : #eeeeee;
+
+//font
+@font-face {
+    font-family: SolwayLight;
+    src: url("/fonts/Solway-Light.otf");
+}
+@font-face {
+    font-family: SolwayRegular;
+    src: url("/fonts/Solway-Regular.otf");
+}

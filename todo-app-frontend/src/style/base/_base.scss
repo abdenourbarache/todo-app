@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 68.5%;
+}
+
+body{
+    font-family: SolwayRegular,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: $m-size;
+    color : $dark-grey; 
+    line-height: 1.5;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+}
+
+button:disabled{
+    cursor: default;
+}
+
+button a{
+    text-decoration: none;
+}
+
+// button a:active {
+//     color: $dark-grey;
+//   }
+  
+// button a:visited {
+//     color: $dark-grey;
+// }
+
+.is-active{
+    font-weight: bold ;
+    font-style: italic;
+}

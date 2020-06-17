@@ -1,0 +1,26 @@
+.box-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/img/clouds.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.box-layout__box{
+    background: fade-out($color: #fff, $amount: .5);
+    padding: $l-size $m-size;
+    width: 32rem;
+    text-align: center;
+
+    button{
+        margin: $s-size;
+    }
+}
+
+.box-layout__title{
+    margin: 0 0 $m-size 0;
+    line-height: 1.6;
+}

@@ -1,0 +1,16 @@
+.page-header{
+    margin: 0 0 $l-size 0;
+    padding: $l-size 0;
+    background-color: $light-grey; 
+}
+
+.page-header__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header__title{
+    font-weight: 300;
+    margin: 0;
+}
