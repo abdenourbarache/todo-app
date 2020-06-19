@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack",
     "build:prod": "webpack -p --env=production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
