@@ -14,6 +14,7 @@ The project is separated into:
 
 
 Go to todo-app-backend folder, open the terminal than run
+
 ```sh
 $ yarn install
 $ node server/server.js
@@ -24,12 +25,19 @@ The api should run in localhost:3000
 Than go to todo-app-frontend,open the terminal and run
 ```sh
 $ yarn install
+
+```
 Then you choose one of these ways to run the app:
 
+```sh
 A. Build the app and run it on live-server :  
-  $ yarn run build
-  $ live-server public
+  $ yarn run build:dev
+  $ yarn start
+ ```
  
+The app should be ready to use in localhost:4000
+
+ ```sh
 B. Run webpack dev-server :  
   $ yarn run dev-server
 ```
