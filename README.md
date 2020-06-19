@@ -45,3 +45,4 @@ B. Run webpack dev-server :
 The app should be ready to use in localhost:8080 
 
 ### Demo application:
+https://todo-app-frontend-react.herokuapp.com/
