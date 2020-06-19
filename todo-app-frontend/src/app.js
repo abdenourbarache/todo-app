@@ -14,8 +14,8 @@ const store = getStore();
 
 const user = JSON.parse(localStorage.getItem("user"));
 
+
 if(user) {
-    console.log(history.location.pathname);
     store.dispatch(login(user));
     store.dispatch(startGetTodos(user.token));
 }

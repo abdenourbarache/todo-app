@@ -2,7 +2,7 @@ import axios from 'axios';
 import { fetchingData, dataFetched } from './loading';
 
 
-const API_URL = process.env.PORT ? "https://todo-app-backendapi.herokuapp.com/todos/" :"http://localhost:3000/todos/";
+const API_URL = process.env.NODE_ENV ==="production" ? "https://todo-app-backendapi.herokuapp.com/todos/" :"http://localhost:3000/todos/";
 export const getTodos = (todos) =>({
     type :'GET_TODOS',
     todos

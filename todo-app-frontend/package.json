@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.3",
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
     "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^3.5.3",
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -43,7 +43,6 @@
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
-    "live-server": "^1.2.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
