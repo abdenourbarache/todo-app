@@ -28,11 +28,14 @@ export const startLogin = (user = {}, callback) => {
                 dispatch(login(userObj));
                 localStorage.setItem("user",JSON.stringify(userObj));   
             })
-            .catch(err => 
+            .catch(err => {
+                dispatch(dataFetched());
                 dispatch(loginFailure({
                     type: "authenticationError",
                     message: "Please verify your credentials"
                 }))
+            }
+                
             )
     }
 }
@@ -58,11 +61,14 @@ export const startRegister = (user = {}, callback) => {
                 localStorage.setItem("user",JSON.stringify(userObj));
                 callback();
             })
-            .catch(err => 
+            .catch(err => {
+                dispatch(dataFetched());
                 dispatch(registerFailure({
                     type: "registrationError",
                     message: "Email already in use"
                 }))
+            }
+                
 
             )
     }
