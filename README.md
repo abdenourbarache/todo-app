@@ -13,7 +13,7 @@ The project is separated into:
 3. Install mongodb and start it
 
 
-Go to todo-app-backend folder, open the terminal than run
+Go to todo-app-backend folder, open the terminal then run
 
 ```sh
 $ yarn install
