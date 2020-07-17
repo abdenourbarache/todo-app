@@ -30,7 +30,7 @@ $ yarn install
 Then you choose one of these ways to run the app:
 
 ```sh
-A. Build the app and run it on live-server :  
+A. Build the app and run it on express server :  
   $ yarn run build:dev
   $ yarn start
  ```
